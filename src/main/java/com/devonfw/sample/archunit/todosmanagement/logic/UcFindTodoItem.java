@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
 
-import com.devonfw.sample.archunit.todosmanagement.common.TodoEto;
+import com.devonfw.sample.archunit.todosmanagement.common.TodoItemEto;
 import com.devonfw.sample.archunit.todosmanagement.dataaccess.TodoItemEntity;
 import com.devonfw.sample.archunit.todosmanagement.dataaccess.TodoItemRepository;
 
@@ -26,11 +26,11 @@ public class UcFindTodoItem {
   
     /**
      * @param itemId the {@link TodoItemEntity#getId() primary key} of the {@link TodoItemEntity} to find.
-     * @return the {@link TodoEto} with the given {@link TodoEto#getId() primary key} or {@code null} if not
+     * @return the {@link TodoItemEto} with the given {@link TodoItemEto#getId() primary key} or {@code null} if not
      *         found.
      */
     // @RolesAllowed(ApplicationAccessControlConfig.PERMISSION_FIND_TASK_ITEM)
-    public TodoEto findById(Long itemId) {
+    public TodoItemEto findById(Long itemId) {
   
       Optional<TodoItemEntity> item = this.todoItemRepository.findById(itemId);
       return item.map(entity -> this.todoItemMapper.toEto(entity)).orElse(null);

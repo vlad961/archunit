@@ -5,7 +5,7 @@ import com.devonfw.sample.archunit.general.common.AbstractEto;
 /**
  * {@link TodoItem} implementation as {@link AbstractEto}.
  */
-public class TodoEto extends AbstractEto implements TodoItem {
+public class TodoItemEto extends AbstractEto implements TodoItem {
     private Long id;
     private String name;
     private String description;

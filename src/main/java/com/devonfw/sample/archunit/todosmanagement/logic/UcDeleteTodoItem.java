@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.devonfw.sample.archunit.todosmanagement.common.TodoEto;
+import com.devonfw.sample.archunit.todosmanagement.common.TodoItemEto;
 import com.devonfw.sample.archunit.todosmanagement.dataaccess.TodoItemRepository;
 
 @ApplicationScoped
@@ -31,7 +31,7 @@ public class UcDeleteTodoItem {
         this.todoItemRepository.deleteById(itemId);
     }
 
-    public void delete(TodoEto item) {
+    public void delete(TodoItemEto item) {
         Long id = item.getId();
 
         if(id == null) {
