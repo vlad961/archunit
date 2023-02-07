@@ -21,6 +21,7 @@
     <skipITs>false</skipITs>
     <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
     <mapstruct.version>1.4.2.Final</mapstruct.version>
+    <org.springframework-version>6.0.3</org.springframework-version>
     <querydsl.version>4.3.1</querydsl.version>
   </properties>
   <dependencyManagement>
@@ -100,6 +101,11 @@
       <artifactId>querydsl-apt</artifactId>
       <scope>provided</scope>
       <version>${querydsl.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${org.springframework-version}</version>
     </dependency>
 
     <!-- Test -->
