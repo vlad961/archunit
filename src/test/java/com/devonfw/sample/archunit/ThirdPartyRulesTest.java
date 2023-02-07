@@ -14,12 +14,16 @@ public class ThirdPartyRulesTest {
     @ArchTest
     static final ArchRule no_classes_should_access_springframework_transactional_annotation =
             noClasses()
-            .should().accessClassesThat().haveFullyQualifiedName("org.springframework.transaction.annotation.Transactional")
-            .because("Use JEE standard (javax.transaction.Transactional from javax.transaction:javax.transaction-api:1.2+).");
+            .should().dependOnClassesThat()
+            .haveFullyQualifiedName(org.springframework.transaction.annotation.Transactional.class.getName())
+            .because("the use of JEE standard (javax.transaction.Transactional from javax.transaction:javax.transaction-api:1.2+) is encouraged.")
+            .allowEmptyShould(true);
+
     @ArchTest
     static final ArchRule no_api_scoped_classes_should_access_transactional_annotation =
             noClasses()
             .that().resideInAPackage("..api..")
             .should().beAnnotatedWith(Transactional.class)
+            .because("the use of @Transactional in API is discouraged. Instead use it to annotate implementations.")
             .allowEmptyShould(true);
 }
