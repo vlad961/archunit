@@ -22,6 +22,7 @@
     <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
     <mapstruct.version>1.4.2.Final</mapstruct.version>
     <querydsl.version>4.3.1</querydsl.version>
+    <org.springframework-version>5.3.20</org.springframework-version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -100,6 +101,16 @@
       <artifactId>querydsl-apt</artifactId>
       <scope>provided</scope>
       <version>${querydsl.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-envers</artifactId>
+      <version>6.1.7.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${org.springframework-version}</version>
     </dependency>
 
     <!-- Test -->
