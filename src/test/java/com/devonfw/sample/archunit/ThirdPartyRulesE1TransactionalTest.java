@@ -16,14 +16,14 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 public class ThirdPartyRulesE1TransactionalTest {
 
     private static boolean apiScopedClassIsUsingTransactional(JavaClass item, String targetPackageFullName) {
-        if(item.getFullName().contains("api") && targetPackageFullName.equals("javax.transaction.Transactional")) {
+        if(item.getFullName().contains("api") && targetPackageFullName.equals("javax.transaction.transactional")) {
                 return true;
         }
         return false;
     }
 
     private static boolean isUsingSpringframeworkTransactionalAnnotation(String targetPackageFullName) {
-        if(targetPackageFullName.equals("org.springframework.transaction.annotation.Transactional")) {
+        if(targetPackageFullName.equals("org.springframework.transaction.annotation.transactional")) {
                 return true;
         }
         return false;
