@@ -13,7 +13,7 @@ import com.tngtech.archunit.lang.SimpleConditionEvent;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
 @AnalyzeClasses(packages = "com.devonfw.sample.archunit", importOptions = ImportOption.DoNotIncludeTests.class)
-public class ThirdPartyRulesTest {
+public class ThirdPartyRulesE1TransactionalTest {
 
     private static boolean apiScopedClassIsUsingTransactional(JavaClass item, String targetPackageFullName) {
         if(item.getFullName().contains("api") && targetPackageFullName.equals("javax.transaction.Transactional")) {
